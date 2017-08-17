@@ -6,7 +6,6 @@ import 'bootstrap/dist/css/bootstrap-theme.css';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import Integer from './containers/Integer';
-import './index.css';
 
 ReactDOM.render(
   <BrowserRouter>
