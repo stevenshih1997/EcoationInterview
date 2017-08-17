@@ -1,0 +1,26 @@
+@media all and (min-width: 480px) {
+  body {
+    text-align: center;
+  }
+  button {
+    align-content: center;
+  }
+  input {
+    margin-top: 15px;
+  }
+  .SetNumberForm {
+    padding: 60px 0;
+  }
+  .SetNumberForm form {
+    margin: 0 auto;
+    max-width: 320px;
+  }
+  .IntScreen {
+    display: inline;
+    border: black solid 2px;
+  }
+  .IncrementButton {
+    margin-top: 15px;
+  }
+
+}

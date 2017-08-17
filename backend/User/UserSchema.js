@@ -4,6 +4,7 @@
 var mongoose = require('mongoose');
 var bcrypt = require('bcryptjs');
 
+// User data
 var UserSchema = mongoose.Schema({
   email: {
     type: String,
@@ -19,6 +20,7 @@ var UserSchema = mongoose.Schema({
 
 var User = module.exports = mongoose.model('UserSchema', UserSchema);
 
+// Hash/salt password
 module.exports.createUser = function (newUser, callback) {
   bcrypt.genSalt(10, function (error, salt) {
     bcrypt.hash(newUser.password, salt, function (err, hash) {
@@ -41,11 +43,11 @@ module.exports.getUserById = function (id, callback) {
   });
 };
 
+// Used for passport authentication
 module.exports.comparePassword = function (candidatePassword, hash, callback) {
   bcrypt.compare(candidatePassword, hash, function (err, isMatch) {
       if (err) throw err;
       callback(null, isMatch);
   });
 };
-
 

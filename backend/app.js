@@ -23,13 +23,16 @@ app.use(expressSession({
 app.use(passport.initialize());
 app.use(passport.session());
 
+// Serve React static files
 app.use(express.static(path.join(__dirname, 'client/build')));
 app.use('/user', UserController);
 app.use('/user', IntegerController);
 
+// Api endpoint
 app.get('/user', function (req, res) {
   console.log('api endpoint');
 });
+// Otherwise, everything else is served to react after running build
 app.get('*', function (req, res) {
   res.sendFile(path.join(__dirname + '/client/build/index.html'));
 });

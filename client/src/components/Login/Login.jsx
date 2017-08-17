@@ -33,11 +33,9 @@ class Login extends Component {
         },
       })
       .then((response) => {
-        console.log(response);
-        this.props.history.push('/account');
+        this.props.history.push('/account'); // After successful login, redirect to numbers page
       })
       .catch((error) => {
-        console.log(this.state.email);
         console.log(error);
       });
   }

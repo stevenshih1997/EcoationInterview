@@ -33,8 +33,7 @@ class Register extends Component {
         },
       })
       .then((response) => {
-        console.log(response);
-        this.props.history.push('/login');
+        this.props.history.push('/login'); // Redirects user to login page
       })
       .catch((error) => {
         console.log(error);
